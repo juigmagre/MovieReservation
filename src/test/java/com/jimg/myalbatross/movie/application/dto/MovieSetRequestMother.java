@@ -1,10 +1,7 @@
 package com.jimg.myalbatross.movie.application.dto;
 
 import com.github.javafaker.Faker;
-import com.jimg.myalbatross.modules.movie.application.dto.MovieCreateRequest;
 import com.jimg.myalbatross.modules.movie.application.dto.MovieSetRequest;
-
-import java.util.UUID;
 
 public class MovieSetRequestMother {
     public static MovieSetRequest random() {

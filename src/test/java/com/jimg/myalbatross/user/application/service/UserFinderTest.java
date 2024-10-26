@@ -1,6 +1,5 @@
 package com.jimg.myalbatross.user.application.service;
 
-import com.jimg.myalbatross.modules.user.application.dto.UserCreateRequest;
 import com.jimg.myalbatross.modules.user.application.dto.UserResponse;
 import com.jimg.myalbatross.modules.user.application.mapper.UserMapper;
 import com.jimg.myalbatross.modules.user.application.service.UserFinder;
@@ -20,7 +19,6 @@ import org.mockito.Mock;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class UserFinderTest extends UnitTestCase {

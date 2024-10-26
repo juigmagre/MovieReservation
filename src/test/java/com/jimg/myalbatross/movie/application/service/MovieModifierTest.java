@@ -4,7 +4,6 @@ import com.jimg.myalbatross.modules.movie.application.dto.MovieSetRequest;
 import com.jimg.myalbatross.modules.movie.application.service.MovieModifier;
 import com.jimg.myalbatross.modules.movie.domain.entity.Movie;
 import com.jimg.myalbatross.modules.movie.domain.repository.MovieRepository;
-import com.jimg.myalbatross.movie.application.dto.MovieCreateRequestMother;
 import com.jimg.myalbatross.movie.application.dto.MovieSetRequestMother;
 import com.jimg.myalbatross.movie.domain.MovieMother;
 import com.jimg.myalbatross.shared.application.UnitTestCase;
@@ -71,7 +70,7 @@ public class MovieModifierTest extends UnitTestCase {
         Movie movie = MovieMother.random();
 
         when(movieRepository.findById(movie.getId())).thenReturn(Optional.of(movie));
-        MyalbatrossException exception = assertThrows(MyalbatrossException.class, ()-> movieModifier.modifyMovie(movie.getId(), incorrectParameter));
+        MyalbatrossException exception = assertThrows(MyalbatrossException.class, () -> movieModifier.modifyMovie(movie.getId(), incorrectParameter));
         verify(movieRepository, times(1)).findById(movie.getId());
         verify(movieRepository, never()).save(any());
         assertMyalbatrossException(error, exception);
