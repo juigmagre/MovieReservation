@@ -7,7 +7,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static java.util.Objects.nonNull;
 
