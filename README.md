@@ -30,3 +30,6 @@ Estos errores se mostrarán en la respuesta HTTP en caso de ocurrir.
 Para los tests, se han hecho tests unitarios. En dichos tests se han probado distintos casos de uso de cada una de las entidades. 
 
 Se han empleado tests parametrizados para aquellos casos en los que el código se repite y se prueban distintas casuísticas.
+
+## Colección de Postman
+Para hacer las pruebas, se puede emplear esta [Colección de Postman](Movie Reservation.postman_collection.json).
