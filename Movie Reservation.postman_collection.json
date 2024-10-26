@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "24eb4fe3-ca61-44b7-bf89-a49fa6074f87",
+		"name": "Movie Reservation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26874171",
+		"_collection_link": "https://warped-meadow-307795.postman.co/workspace/New-Team-Workspace~64dafa60-0a55-46d6-8dbf-4603e476e23d/collection/26874171-24eb4fe3-ca61-44b7-bf89-a49fa6074f87?action=share&source=collection_link&creator=26874171"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get by filter",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movie?page=0&size=9&director=Wach&releaseYear=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "9"
+								},
+								{
+									"key": "director",
+									"value": "Wach"
+								},
+								{
+									"key": "releaseYear",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"The Matrixx\",\n    \"director\": \"Lana Wachowski\",\n    \"releaseYear\": 2001,\n    \"duration\": 2.4,\n    \"available\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movie?id=8586175d-df5c-4597-b789-906f9be2861b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "8586175d-df5c-4597-b789-906f9be2861b"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"e6f7df76-ef3e-4042-b93e-31784bea5af0\",\n    \"title\": \"Metal Gear Solid 3: Snake Eater\",\n    \"director\": \"Hideo Kojima\",\n    \"releaseYear\": 2004,\n    \"duration\": 4.5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/movie?movieId=e6f7df76-ef3e-4042-b93e-31784bea5af0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"movie"
+							],
+							"query": [
+								{
+									"key": "movieId",
+									"value": "e6f7df76-ef3e-4042-b93e-31784bea5af0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "Find all Ordered by movie title",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reservationId\": \"ce14a698-e271-45d9-9c47-4d0a420f48ae\",\n  \"userId\": \"4a7d3b61-aaa0-4fd5-97d6-f4f4b484a206\",\n  \"movieId\": \"fa9335d0-131a-4f10-b8bd-a29d867b6a5f\",\n  \"endDate\": \"2024-10-30T00:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/reservation/cancel?id=e262b090-98ba-4173-9893-a10e31152803",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"reservation",
+								"cancel"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "e262b090-98ba-4173-9893-a10e31152803"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"4a7d3b61-aaa0-4fd5-97d6-f4f4b484a206\",\n  \"mail\": \"john@mail.com\",\n  \"username\": \"John\",\n  \"birthDate\": \"1990-10-19T00:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \n  \"mail\": \"bob@example.com\",\n  \"username\": \"John\",\n  \"birthDate\": \"1990-10-19T00:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user?id=452b45f7-fbba-4486-a214-ac67185f9a38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "452b45f7-fbba-4486-a214-ac67185f9a38"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user?id=452b45f7-fbba-4486-a214-ac67185f9a38",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "452b45f7-fbba-4486-a214-ac67185f9a38"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/user?id=4a7d3b61-aaa0-4fd5-97d6-f4f4b484a206",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "4a7d3b61-aaa0-4fd5-97d6-f4f4b484a206"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
