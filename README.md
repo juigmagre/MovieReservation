@@ -15,6 +15,11 @@ También tiene el paquete ```shared```, que contiene las partes compartidas por 
 Para la búsqueda de películas, se ha empleado un [Specification](src/main/java/com/jimg/myalbatross/modules/movie/application/criteria), para poder obtener los resultados tanto por año como por director, ambos a la vez inclusive. También se ha hecho el filtrado
 de películas disponibles en dicho specification.
 
+### Listado de reservas
+
+Se puede obtener las reservas en orden alfabético ascendente, descendente, o sin ningún orden. Esto se hará haciendo la petición http://localhost:8080/api/v1/reservation/all?sort=DESC , ssiendo el parámetro sort DESC (orden descendente), ASC (orden ascendente) o 
+nada (sin orden)
+
 ### Gestión de Excepciones 🚫
 
 Las excepciones se han centralizado en una sola, [MyalbatrossException](src/main/java/com/jimg/myalbatross/shared/domain/exception/MyalbatrossException.java), pudiendo manejarlas de forma más sencilla y cómoda. Para gestionar los distintos 
