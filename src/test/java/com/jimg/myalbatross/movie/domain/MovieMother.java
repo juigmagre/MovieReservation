@@ -38,7 +38,6 @@ public class MovieMother {
                 faker.number().randomNumber(),
                 faker.number().randomDouble(2, 1, 10),
                 new HashSet<>());
-        ;
         Reservation activeReservation = ReservationMother.randomActiveWithMovie(movie);
         Set<Reservation> reservations = Set.of(activeReservation);
         movie.setReservations(reservations);

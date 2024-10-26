@@ -17,8 +17,6 @@ public interface UserMapper {
 
     User toUser(UserResponse userResponse);
 
-    List<UserResponse> toUserResponseList(List<User> users);
-
     default UserBirth map(LocalDateTime birthDate) {
         return nonNull(birthDate) ? new UserBirth(birthDate) : null;
     }

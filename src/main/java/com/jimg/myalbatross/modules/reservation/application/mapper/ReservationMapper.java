@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ReservationMapper {
-    public ReservationResponse toReservationResponse(Reservation reservation);
+    ReservationResponse toReservationResponse(Reservation reservation);
 
     List<ReservationResponse> toReservationResponseList(List<Reservation> reservations);
 }
